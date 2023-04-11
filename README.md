@@ -163,13 +163,6 @@ The structure of the PBL folder will be like:
 
 Run terraform plan to ensure all configuration is not showing any error and run terraform apply.
 
-![te-12](https://user-images.githubusercontent.com/94229949/231288234-5975a791-54c1-4684-ad3c-dfebb486542e.png)
-
-
-![te-13](https://user-images.githubusercontent.com/94229949/231288263-ff1af18a-9f65-4f6d-b7e8-a69b3c1fcb1c.png)
-
-
-![te-14](https://user-images.githubusercontent.com/94229949/231288282-123e6155-39f0-4a70-93af-c4d08f703b57.png)
 
 
 ![te-15](https://user-images.githubusercontent.com/94229949/231288297-514b7163-89b5-4948-98a8-82cc13c66409.png)
