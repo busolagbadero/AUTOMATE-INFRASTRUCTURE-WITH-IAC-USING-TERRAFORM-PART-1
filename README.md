@@ -24,7 +24,7 @@ Additionally, you may have observed that another file is produced during the pla
 
 In line with our architectural plan, we necessitate six subnets consisting of two public subnets, two private subnets for webservers, and two private subnets for the data layer. To create these subnets, include the following configuration in the "main.tf" file:
 
-
+```
 # Create public subnets1
     resource "aws_subnet" "public1" {
     vpc_id                     = aws_vpc.main.id
@@ -33,7 +33,9 @@ In line with our architectural plan, we necessitate six subnets consisting of tw
     availability_zone          = "us-east-1a"
 
 }
+```
 
+```
 # Create public subnet2
     resource "aws_subnet" "public2" {
     vpc_id                     = aws_vpc.main.id
@@ -41,7 +43,7 @@ In line with our architectural plan, we necessitate six subnets consisting of tw
     map_public_ip_on_launch    = true
     availability_zone          = "us-east-1b"
 }
-
+```
 
 To create two subnets, we need to declare two resource blocks - one for each subnet.
 
@@ -123,7 +125,8 @@ To improve our code, we can refactor it by creating separate files named variabl
  
      }
 
-## Create VPC
+```
+# Create VPC
 
     resource "aws_vpc" "main" {
   
@@ -138,7 +141,7 @@ To improve our code, we can refactor it by creating separate files named variabl
     enable_classiclink_dns_support = var.enable_classiclink
   
     }
-
+```
 # Create public subnets
     resource "aws_subnet" "public" {
     count  = var.preferred_number_of_public_subnets == null ? length(data.aws_availability_zones.available.names) : var.preferred_number_of_public_subnets   
